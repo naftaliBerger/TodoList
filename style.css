@@ -1,0 +1,82 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;     
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #005ecc;
+}
+
+
+div.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.1s;
+}
+
+div.task:hover {
+  transform: translateY(-2px);
+}
+
+
+div.task input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+div.task.done {
+  text-decoration: line-through;
+  color: #999;
+  background: #e0e0e0;
+}
