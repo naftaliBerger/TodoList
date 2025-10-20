@@ -36,6 +36,9 @@ input[type="text"]:focus {
   outline: none;
 }
 
+#deletBtn{
+    background-color: #f0f4f8;
+}
 
 button {
   padding: 10px 15px;

@@ -1,24 +1,32 @@
 const form = document.querySelector("form")!;
 const input = document.querySelector("input")!;
 
+const taskContainer = document.createElement("div");
+document.body.appendChild(taskContainer); 
+
 let doneContainer: HTMLDivElement | null = null; 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!input.value) return;
-
-  const taskContainer = document.createElement("div");
+  
+  const task = document.createElement("div");
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+  const delet = document.createElement("button");
+  delet.id = "deletBtn";
+  delet.textContent = "❌";
+  delet.onclick = () => {
+    task.remove();
+  }
 
-  const task = document.createElement("div");
   task.appendChild(checkbox);
   task.append(" ", input.value);
-
+  task.append(" ", delet);
+  
   
   taskContainer.appendChild(task);
 //   taskContainer.append(" ", input.value);
 
-  document.body.appendChild(taskContainer); 
 
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
@@ -34,6 +42,7 @@ form.addEventListener("submit", (e) => {
         doneContainer.appendChild(title);
         document.body.appendChild(doneContainer);
       }
+      
       doneContainer.appendChild(task);
     }
      else {
