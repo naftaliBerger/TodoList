@@ -16,11 +16,16 @@ form.addEventListener("submit", function (e) {
     delet.onclick = function () {
         task.remove();
     };
-    task.appendChild(checkbox);
-    task.append(" ", input.value);
-    task.append(" ", delet);
+    var taskInput = document.createElement("div");
+    taskInput.textContent = input.value;
+    var edit = document.createElement("button");
+    edit.textContent = "✏️";
+    edit.onclick = function () {
+        taskInput.setAttribute("contentEditable", "true");
+        taskInput.focus();
+    };
+    task.append(checkbox, taskInput, delet, edit);
     taskContainer.appendChild(task);
-    //   taskContainer.append(" ", input.value);
     checkbox.addEventListener("change", function () {
         if (checkbox.checked) {
             console.log('chek');
@@ -37,7 +42,6 @@ form.addEventListener("submit", function (e) {
         }
         else {
             taskContainer.appendChild(task);
-            //   document.body.appendChild(task);
             console.log('fghjkl');
         }
     });
