@@ -5,20 +5,23 @@ document.body.appendChild(taskContainer);
 
 let doneContainer: HTMLDivElement | null = null;
 
-// const deletAll = document.createElement("buttuo");
-//   deletAll.classList = "Btn";
-//   deletAll.textContent = "🗑️";
-//   deletAll.onclick = () =>{
-//     taskContainer.remove();
-//   }
-//   taskContainer.appendChild(deletAll)
+const deletAll = document.createElement("button");
+  deletAll.textContent = "delet All tasks";
+  deletAll.onclick = () =>{
+    taskContainer.innerHTML = "";
+    if(doneContainer){
+      doneContainer.remove();
+      doneContainer = null;
+    }
+  }
+  form.appendChild(deletAll)
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!input.value) return;
 
   const task = document.createElement("div");
-  task.id = "task";
+  task.classList = "task";
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   const delet = document.createElement("button");
@@ -59,7 +62,16 @@ form.addEventListener("submit", (e) => {
         const title = document.createElement("h2");
         title.textContent = "Tasks done";
 
+        const deletAllDone = document.createElement("button");
+        deletAllDone.classList = "Btn";
+        deletAllDone.textContent = "🗑️";
+        deletAllDone.onclick = () => {
+        const tasks = doneContainer!.querySelectorAll(".task");
+        tasks.forEach(task => task.remove());
+};
+
         
+        doneContainer.appendChild(deletAllDone);
         doneContainer.appendChild(title);
         document.body.appendChild(doneContainer);
       }

@@ -40,7 +40,7 @@ input[type="text"]:focus {
     background-color: #f0f4f8;
 }
 
-#task{
+.task{
     display: flex;
 }
 button {
@@ -71,14 +71,3 @@ div.task:hover {
   transform: translateY(-2px);
 }
 
-
-div.task input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-div.task.done {
-  text-decoration: line-through;
-  color: #999;
-  background: #e0e0e0;
-}

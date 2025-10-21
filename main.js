@@ -3,19 +3,22 @@ var input = document.querySelector("input");
 var taskContainer = document.createElement("div");
 document.body.appendChild(taskContainer);
 var doneContainer = null;
-// const deletAll = document.createElement("buttuo");
-//   deletAll.classList = "Btn";
-//   deletAll.textContent = "🗑️";
-//   deletAll.onclick = () =>{
-//     taskContainer.remove();
-//   }
-//   taskContainer.appendChild(deletAll)
+var deletAll = document.createElement("button");
+deletAll.textContent = "delet All tasks";
+deletAll.onclick = function () {
+    taskContainer.innerHTML = "";
+    if (doneContainer) {
+        doneContainer.remove();
+        doneContainer = null;
+    }
+};
+form.appendChild(deletAll);
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!input.value)
         return;
     var task = document.createElement("div");
-    task.id = "task";
+    task.classList = "task";
     var checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     var delet = document.createElement("button");
@@ -52,6 +55,14 @@ form.addEventListener("submit", function (e) {
                 doneContainer.appendChild(document.createElement("hr"));
                 var title = document.createElement("h2");
                 title.textContent = "Tasks done";
+                var deletAllDone = document.createElement("button");
+                deletAllDone.classList = "Btn";
+                deletAllDone.textContent = "🗑️";
+                deletAllDone.onclick = function () {
+                    var tasks = doneContainer.querySelectorAll(".task");
+                    tasks.forEach(function (task) { return task.remove(); });
+                };
+                doneContainer.appendChild(deletAllDone);
                 doneContainer.appendChild(title);
                 document.body.appendChild(doneContainer);
             }
