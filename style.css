@@ -36,10 +36,13 @@ input[type="text"]:focus {
   outline: none;
 }
 
-#deletBtn{
-    background-color: #f0f4f8;
+.Btn{
+    background-color: #ffffff;
 }
 
+.task{
+    display: flex;
+}
 button {
   padding: 10px 15px;
   font-size: 16px;
@@ -49,10 +52,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
-}
-
-button:hover {
-  background-color: #005ecc;
 }
 
 
@@ -72,14 +71,3 @@ div.task:hover {
   transform: translateY(-2px);
 }
 
-
-div.task input[type="checkbox"] {
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
-div.task.done {
-  text-decoration: line-through;
-  color: #999;
-  background: #e0e0e0;
-}
