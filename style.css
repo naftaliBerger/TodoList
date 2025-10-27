@@ -1,26 +1,23 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;     
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
   max-width: 450px;
   margin: 50px auto;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 
 h1 {
   text-align: center;
   color: #333;
 }
 
-
 form {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
-
 
 input[type="text"] {
   flex: 1;
@@ -35,13 +32,26 @@ input[type="text"]:focus {
   border-color: #0077ff;
   outline: none;
 }
-
-.Btn{
-    background-color: #ffffff;
+.BtnDon {
+  background-color: #ffffff;
 }
 
-.task{
-    display: flex;
+.Btn {
+  background-color: #ffffff;
+  opacity: 0;
+}
+
+div.task:hover .Btn {
+  opacity: 1;
+}
+
+.task.dragging{
+  opacity: 0.5;
+  background-color: #c8bfbf;
+}
+
+.task {
+  display: flex;
 }
 button {
   padding: 10px 15px;
@@ -54,7 +64,6 @@ button {
   transition: background 0.2s;
 }
 
-
 div.task {
   display: flex;
   align-items: center;
@@ -63,11 +72,10 @@ div.task {
   background: #fff;
   padding: 10px 12px;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.1s;
 }
 
 div.task:hover {
   transform: translateY(-2px);
 }
-
